@@ -1,57 +1,27 @@
-import os
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
-from src.routes import chat
+from fastapi import FastAPI
+from src.routes import llm
 
-# Load environment variables
+# Load environment variables from .env
 load_dotenv()
 
-# Create FastAPI app
-app = FastAPI(
-    title="PeopleFinder Backend",
-    description="AI-powered people finder backend with multi-agent orchestration",
-    version="1.0.0"
-)
+app = FastAPI(title="Perplexity Integration API", version="0.1")
 
-# Setup CORS
-frontend_url = os.getenv("FRONTEND_URL", "http://localhost:3000")
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[frontend_url, "http://localhost:3000", "http://localhost:3001"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# Register LLM router only
+app.include_router(llm.router, prefix="/api/llm", tags=["llm"])
 
-# Include routers
-app.include_router(chat.router, prefix="/api/chat", tags=["chat"])
 
-# Health check endpoint
 @app.get("/health")
-async def health_check():
-    """Health check endpoint"""
-    from datetime import datetime
-    return {
-        "status": "OK",
-        "timestamp": datetime.utcnow().isoformat()
-    }
+async def health():
+    return {"status": "ok"}
 
-# Root endpoint
+
 @app.get("/")
-async def root():
-    """Root endpoint"""
-    return {
-        "message": "PeopleFinder Backend is running",
-        "docs": "/docs",
-        "openapi": "/openapi.json"
-    }
+async def index():
+    return {"message": "Perplexity integration is ready", "docs": "/docs"}
+
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(
-        "src.main:app",
-        host="0.0.0.0",
-        port=3001,
-        reload=True
-    )
+
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
