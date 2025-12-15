@@ -1,24 +1,11 @@
-# --- FastAPI & Async Web Stack ---
 fastapi==0.104.1
 uvicorn==0.24.0
-python-multipart==0.0.6
-
-# --- Asynchronous HTTP Clients (Recommended for FastAPI) ---
+python-dotenv==1.0.0
+pydantic==2.5.0
 httpx==0.25.2
 aiohttp==3.9.1
-
-# --- Synchronous HTTP Client (Included for Legacy/Specific Use Cases) ---
-requests==2.32.5
-
-# --- Data Handling & Configuration ---
-pydantic==2.5.0
-python-dotenv==1.0.0
-
-# --- AI/LLM SDKs ---
 google-generativeai==0.3.0
 anthropic==0.7.0
 openai==1.3.9
-
-# --- PDF Processing (Corrected for Python Environment) ---
+python-multipart==0.0.6
 pdf2image==1.16.3
-pypdf                      # Replaces the non-existent pdf-parse

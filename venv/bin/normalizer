@@ -1,4 +1,4 @@
-#!/Users/mukeshreddy/Developer/Persona_Webscraping/venv/bin/python
+#!/Users/mukeshreddy/people-collector/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

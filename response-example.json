@@ -1,0 +1,64 @@
+{
+    "query": "Spencer Feig spencer@flashai.us Looking for current role and public speaking engagements.",
+    "name": "Spencer Feig",
+    "email": "spencer@flashai.us",
+    "plan_provider": "google",
+    "orchestrator_plan": {
+        "response": "I will deploy three specialized agents to find Spencer Feig's current role and public speaking engagements, and then synthesize the findings into a clear answer.",
+        "agents": [
+            {
+                "task": "Identify Spencer Feig's current professional role and affiliation.",
+                "prompt": "You are an expert professional researcher. Your task is to find the current professional role and affiliation for 'Spencer Feig' associated with 'spencer@flashai.us'. Prioritize information from professional networking sites (e.g., LinkedIn), company websites, and recent news articles. State the current role and the organization he is associated with. If multiple roles are found, identify the most recent or primary one."
+            },
+            {
+                "task": "Locate public speaking engagements for Spencer Feig.",
+                "prompt": "You are an expert event and public appearance researcher. Your task is to find any public speaking engagements, presentations, conference appearances, webinars, or interviews conducted by 'Spencer Feig'. Look for specific dates, topics, event names, and locations. If possible, provide links to event pages, recordings, or summaries. If no public speaking engagements are found, state that explicitly."
+            },
+            {
+                "task": "Synthesize findings into a comprehensive answer.",
+                "prompt": "You are a concise information synthesizer. Your task is to take the findings regarding Spencer Feig's current role and public speaking engagements from the previous agents and present them clearly and comprehensively. Start by stating his current role and the organization he is affiliated with. Then, list any public speaking engagements found, including dates, topics, and events. If no speaking engagements were found, explicitly state that. Ensure the final output is easy to read and directly answers the user's query."
+            }
+        ]
+    },
+    "search_results": [
+        {
+            "provider": "brave",
+            "results": [
+                {
+                    "position": 1,
+                    "title": "Spencer Feig | Speaker | ASU GSV Summit",
+                    "link": "https://www.asugsvsummit.com/speakers/spencer-feig",
+                    "snippet": "Spencer Feig is the <strong>Director of Development at AI OWL</strong> and a current student at Michigan State University, studying economics. He has helped lead the development of Flash AI, an online investigative tool that assists law enforcement by streamlining ..."
+                },
+                {
+                    "position": 2,
+                    "title": "Where To Find Speaking Engagements: The Complete List",
+                    "link": "https://speakerflow.com/where-to-find-speaking-engagements-the-complete-list/",
+                    "snippet": "Speaking engagements come from many sources, but this is the ultimate list. If you&#x27;re unsure where to find your next gig, this is for you."
+                },
+                {
+                    "position": 3,
+                    "title": "Spencer Rascoff Speaking Engagements, Schedule, & Fee | WSB",
+                    "link": "https://www.wsb.com/speakers/spencer-rascoff/",
+                    "snippet": "<strong>Contact the Washington Speakers Bureau to schedule Spencer Rascoff as your keynote speaker</strong>. Our service will make your event the event of the year."
+                },
+                {
+                    "position": 4,
+                    "title": "People | The Spencer Foundation",
+                    "link": "https://www.spencer.org/staff",
+                    "snippet": "Our staff supports the review of over 2200 proposals annually, <strong>oversees Spencer events and outreach to the field and provides administrative and fiscal management and oversight</strong>."
+                },
+                {
+                    "position": 5,
+                    "title": "Speaking - John Spencer",
+                    "link": "https://spencereducation.com/speaking-and-consulting/",
+                    "snippet": "Over the last few years, I’ve had the chance to work with teachers all of the world. If you are interested in having me speak or present, please click below or email me at [email protected] and I’ll be in touch within 24 hours · Note: I am available to do professional development in-person ..."
+                }
+            ]
+        },
+        {
+            "provider": "serpapi",
+            "results": []
+        }
+    ]
+}
